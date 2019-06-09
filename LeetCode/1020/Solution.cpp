@@ -9,14 +9,8 @@ public:
         for(int i=0;i<m;++i) {
             if(A[0][i] == 1) {
                 queue<pair<int, int>> q;
-                bool visited[501][501];
-                
-                for(int i=0;i<n;++i)
-                    for(int j=0;j<m;++j)
-                        visited[i][j] = false;
                 
                 q.push({0, i});
-                visited[0][i] = true;
                 A[0][i] = 0;
                 
                 while(!q.empty()) {
@@ -30,10 +24,9 @@ public:
                         int dx = x + direct[0][i];
                         int dy = y + direct[1][i];
                         
-                        if(dx >= 0 && dx < n - 1 && dy >= 0 && dy < m - 1 && visited[dx][dy] == false && A[dx][dy] == 1) {
+                        if(dx >= 0 && dx < n - 1 && dy >= 0 && dy < m - 1 && A[dx][dy] == 1) {
                             q.push({dx, dy});
                             A[dx][dy] = 0;
-                            visited[dx][dy] = true;
                         }
                     }
                 }
@@ -41,14 +34,8 @@ public:
             
             if(A[n-1][i] == 1) {
                 queue<pair<int, int>> q;
-                bool visited[501][501];
-                
-                for(int i=0;i<n;++i)
-                    for(int j=0;j<m;++j)
-                        visited[i][j] = false;
                 
                 q.push({n-1, i});
-                visited[n-1][i] = true;
                 A[n-1][i] = 0;
                 
                 while(!q.empty()) {
@@ -62,10 +49,9 @@ public:
                         int dx = x + direct[0][i];
                         int dy = y + direct[1][i];
                         
-                        if(dx >= 0 && dx < n - 1 && dy >= 0 && dy < m - 1 && visited[dx][dy] == false && A[dx][dy] == 1) {
+                        if(dx >= 0 && dx < n - 1 && dy >= 0 && dy < m - 1 && A[dx][dy] == 1) {
                             q.push({dx, dy});
                             A[dx][dy] = 0;
-                            visited[dx][dy] = true;
                         }
                     }
                 }
@@ -75,14 +61,8 @@ public:
         for(int i=0;i<n;++i) {
             if(A[i][0] == 1) {
                 queue<pair<int, int>> q;
-                bool visited[501][501];
-                
-                for(int i=0;i<n;++i)
-                    for(int j=0;j<m;++j)
-                        visited[i][j] = false;
                 
                 q.push({i, 0});
-                visited[i][0] = true;
                 A[i][0] = 0;
                 
                 while(!q.empty()) {
@@ -96,10 +76,9 @@ public:
                         int dx = x + direct[0][i];
                         int dy = y + direct[1][i];
                         
-                        if(dx >= 0 && dx < n - 1 && dy >= 0 && dy < m - 1 && visited[dx][dy] == false && A[dx][dy] == 1) {
+                        if(dx >= 0 && dx < n - 1 && dy >= 0 && dy < m - 1 && A[dx][dy] == 1) {
                             q.push({dx, dy});
                             A[dx][dy] = 0;
-                            visited[dx][dy] = true;
                         }
                     }
                 }
@@ -107,14 +86,8 @@ public:
             
             if(A[i][m-1] == 1) {
                 queue<pair<int, int>> q;
-                bool visited[501][501];
-                
-                for(int i=0;i<n;++i)
-                    for(int j=0;j<m;++j)
-                        visited[i][j] = false;
                 
                 q.push({i, m-1});
-                visited[i][m-1] = true;
                 A[i][m-1] = 0;
                 
                 while(!q.empty()) {
@@ -128,10 +101,9 @@ public:
                         int dx = x + direct[0][i];
                         int dy = y + direct[1][i];
                         
-                        if(dx >= 0 && dx < n - 1 && dy >= 0 && dy < m - 1 && visited[dx][dy] == false && A[dx][dy] == 1) {
+                        if(dx >= 0 && dx < n - 1 && dy >= 0 && dy < m - 1 && A[dx][dy] == 1) {
                             q.push({dx, dy});
                             A[dx][dy] = 0;
-                            visited[dx][dy] = true;
                         }
                     }
                 }
