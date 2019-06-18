@@ -1,6 +1,22 @@
 class Solution {
 public:
     string removeDuplicates(string S) {
+        string result = "";
+        
+        for(char c : S) {
+            if(result == "" || result.back() != c)
+                result.push_back(c);
+            else
+                result.pop_back();
+        }
+        
+        return result;
+    }
+};
+/*
+class Solution {
+public:
+    string removeDuplicates(string S) {
         stack<char> s;
         
         s.push(S[0]);
@@ -32,3 +48,4 @@ public:
         return result;
     }
 };
+*/
