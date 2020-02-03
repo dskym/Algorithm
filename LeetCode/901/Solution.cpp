@@ -1,29 +1,21 @@
 class StockSpanner {
 public:
-    int dp[100001];
-    int arr[100001];
-    int index;
+    stack<pair<int, int>> s;
     
     StockSpanner() {
-        index = 0;
-        
-        for(int i=0;i<100001;++i)
-            dp[i] = 1;
     }
     
     int next(int price) {
-        int temp = index-1;
-        arr[index] = price;
-
-        while(temp >= 0) {
-            if(arr[temp] <= arr[index]) {
-                dp[index] += dp[temp];
-                temp -= dp[temp];
-            } else
-                break;
+        int w = 1;
+        
+        while(!s.empty() && s.top().first <= price) {
+            w += s.top().second;
+            s.pop();
         }
         
-        return dp[index++];
+        s.push({price, w});
+        
+        return w;
     }
 };
 
