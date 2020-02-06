@@ -7,6 +7,7 @@ private:
 public:
     FooBar(int n) {
         this->n = n;
+	m2.lock();
     }
 
     void foo(function<void()> printFoo) {
