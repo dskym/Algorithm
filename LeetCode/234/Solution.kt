@@ -20,12 +20,12 @@ class Solution {
             count++
         }
 
-        if(count % 2 == 1) {
+        for(i in 0 until count/2) {
+            s2.push(s1.peek())
             s1.pop()
         }
 
-        for(i in 0 until count/2) {
-            s2.push(s1.peek())
+        if(count % 2 == 1) {
             s1.pop()
         }
 
